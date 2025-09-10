@@ -54,8 +54,8 @@ const IngredientPage = (): React.ReactElement => {
     fetchCocktailsWithIngredient();
   }, [name]);
 
-  if (loading) return <p>Laddar ingrediens...</p>;
-  if (!ingredient) return <p>Ingen information hittades för {name}.</p>;
+  if (loading) return <p>Loading ingredient...</p>;
+  if (!ingredient) return <p>No information found on {name}.</p>;
 
   return (
     <div className="ingredient-page">
@@ -68,12 +68,14 @@ const IngredientPage = (): React.ReactElement => {
       )}
 
       <ul className="ingredient-info">
-        {ingredient.type && <li>Typ: {ingredient.type}</li>}
-        <li>Alkohol: {ingredient.isAlcohol ? "Ja" : "Nej"}</li>
+        {ingredient.type && <li>Type: {ingredient.type}</li>}
+        <li>Alcohol: {ingredient.isAlcohol ? "Yes" : "No"}</li>
         {ingredient.abv && <li>ABV: {ingredient.abv}%</li>}
       </ul>
 
-      <h3 className="ingredient-subheading">Drinkar med {ingredient.name}:</h3>
+      <h3 className="ingredient-subheading">
+        Drinks containing {ingredient.name}:
+      </h3>
 
       <div className="ingredient-drinks">
         {cocktails.map((cocktail) => (

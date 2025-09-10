@@ -35,11 +35,12 @@ const LandingPage = (): React.ReactElement => {
 
   if (loading) return <MartiniLoader />;
 
-  if (!cocktail) return <p>Kunde inte hämta cocktail.</p>;
+  if (!cocktail)
+    return <p>Oops! Something went wrong while fetching the cocktail</p>;
 
   return (
     <div className="landing-page">
-      <h2 className="landing-page__heading">Dagens slumpade cocktail</h2>
+      <h2 className="landing-page__heading">Cocktail of the day</h2>
       <img
         src={cocktail.image}
         alt={cocktail.name}
@@ -48,7 +49,7 @@ const LandingPage = (): React.ReactElement => {
       />
       <h3 className="landing-page__name">{cocktail.name}</h3>
       <Link to={`/cocktail/${cocktail.id}`} className="landing-page__link">
-        Se detaljer
+        Details
       </Link>
       <br />
       <button
@@ -56,7 +57,7 @@ const LandingPage = (): React.ReactElement => {
         onClick={fetchRandomCocktail}
         disabled={loading}
       >
-        {loading ? "Laddar..." : "Hämta ny cocktail"}
+        {loading ? "Loading..." : "New cocktail"}
       </button>
     </div>
   );

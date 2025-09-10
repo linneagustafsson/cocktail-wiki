@@ -18,10 +18,10 @@ const FavoritesPage = (): React.ReactElement => {
   };
   return (
     <div className="favorites-page">
-      <h2 className="favorites-page__heading">Dina favoriter</h2>{" "}
+      <h2 className="favorites-page__heading">Your favorite cocktails</h2>{" "}
       {favorites.length === 0 ? (
         <p className="favorites-page__empty">
-          Du har inga sparade cocktails ännu.
+          You don't have any favorites yet.
         </p>
       ) : (
         <div className="favorites-page__results">
@@ -37,7 +37,7 @@ const FavoritesPage = (): React.ReactElement => {
                   className="favorites-page__remove-button"
                   onClick={() => handleRemove(cocktail.id)}
                 >
-                  ❌ Ta bort
+                  ❌ Remove
                 </button>
               </div>
             </div>

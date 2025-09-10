@@ -23,16 +23,16 @@ const Navbar = (): ReactElement => {
 
       <div className={`wrapper ${menuOpen ? "open" : ""}`}>
         <Link className="link home" to="/">
-          Hem
+          Home
         </Link>
         <Link className="link search" to="/search">
-          Sök
+          Search
         </Link>
         <Link className="link example-drink" to="/cocktail/11007">
-          Exempeldrink
+          Example drink
         </Link>
         <Link className="link favorites" to="/favorites">
-          Favoriter
+          Favorites
         </Link>
       </div>
     </nav>

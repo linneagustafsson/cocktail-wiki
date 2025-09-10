@@ -29,38 +29,37 @@ const AdvancedSearchForm = ({
           type="text"
           value={query}
           onChange={(e) => onChange("query", e.target.value)}
-          placeholder="Ex: Margarita"
+          placeholder="E.g Margarita"
           className="search-form__input"
         />
         <input
           type="text"
           value={category}
           onChange={(e) => onChange("category", e.target.value)}
-          placeholder="Kategori, ex cocktail"
+          placeholder="Category, e.g cocktail"
           className="search-form__input"
         />
         <input
           type="text"
           value={glass}
           onChange={(e) => onChange("glass", e.target.value)}
-          placeholder="Glas, ex margarita glass"
+          placeholder="Glass, e.g margarita glass"
           className="search-form__input"
         />
         <input
           type="text"
           value={ingredient}
           onChange={(e) => onChange("ingredient", e.target.value)}
-          placeholder="Ingrediens"
+          placeholder="Ingredient"
           className="search-form__input"
         />
       </div>
 
       <div className="search-form__options">
         {" "}
-        {/* 🔹 NYTT */}
         <label
           htmlFor="alcohol-free"
-          title="Filtrera bort alkoholhaltiga drinkar"
+          title="Filter alcohol free drinks"
           className="search-form__checkbox"
         >
           <input
@@ -69,10 +68,10 @@ const AdvancedSearchForm = ({
             checked={isAlcoholFree}
             onChange={onToggleAlcoholFree}
           />
-          Visa endast alkoholfria
+          Show only non-alcoholic drinks
         </label>
         <button type="submit" className="search-form__button">
-          Sök
+          Search
         </button>
       </div>
     </form>

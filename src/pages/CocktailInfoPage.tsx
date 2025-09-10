@@ -19,13 +19,13 @@ const CocktailInfoPage = (): React.ReactElement => {
     );
 
     if (alreadyExists) {
-      alert("Cocktailen finns redan i dina favoriter!");
+      alert("This cocktail is already in your favorites!");
       return;
     }
 
     const updated = [...existing, cocktail];
     localStorage.setItem("favorites", JSON.stringify(updated));
-    alert("Cocktailen har lagts till i dina favoriter!");
+    alert("The cocktail has been added to you favorites!");
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const CocktailInfoPage = (): React.ReactElement => {
           setCocktail(mapped);
         }
       } catch (error) {
-        console.error("Fel vid hämtning:", error);
+        console.error("Error whiel fetching:", error);
       } finally {
         setLoading(false);
       }
@@ -51,8 +51,8 @@ const CocktailInfoPage = (): React.ReactElement => {
     fetchCocktail();
   }, [id]);
 
-  if (loading) return <p>Laddar cocktail...</p>;
-  if (!cocktail) return <p>Ingen cocktail hittades.</p>;
+  if (loading) return <p>Loading cocktail...</p>;
+  if (!cocktail) return <p>No cocktail found.</p>;
 
   return (
     <div className="cocktail-info">

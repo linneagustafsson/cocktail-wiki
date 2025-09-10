@@ -51,7 +51,7 @@ const SearchPage = (): React.ReactElement => {
       } else if (isAlcoholFree) {
         url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`;
       } else {
-        setError("Fyll i minst ett fält för att söka.");
+        setError("Fill in at least one field to search");
         setLoading(false);
         return;
       }
@@ -63,8 +63,10 @@ const SearchPage = (): React.ReactElement => {
       const formatted = drinks.map(mapRawCocktailData);
       setResults(formatted);
     } catch (err) {
-      console.error("Fel vid sökning:", err);
-      setError("Något gick fel vid sökningen. Försök igen.");
+      console.error("Wrong search:", err);
+      setError(
+        "Oops! Something went wrong during the search. Please try again"
+      );
     } finally {
       setLoading(false);
     }
@@ -77,7 +79,9 @@ const SearchPage = (): React.ReactElement => {
 
   return (
     <div className="search-page">
-      <h2 className="search-page__heading">Sök efter cocktails</h2>
+      <h2 className="search-page__heading">
+        Search cocktails by name or ingredient
+      </h2>
 
       <div className="search-page__form-wrapper">
         <AdvancedSearchForm
@@ -114,11 +118,11 @@ const SearchPage = (): React.ReactElement => {
                 disabled={currentPage === 1 || loading}
                 className="search-page__button"
               >
-                Föregående
+                Previous
               </button>
 
               <span className="search-page__page-info">
-                Sida {currentPage} av {totalPages}
+                Page {currentPage} of {totalPages}
               </span>
 
               <button
@@ -128,13 +132,13 @@ const SearchPage = (): React.ReactElement => {
                 disabled={currentPage === totalPages || loading}
                 className="search-page__button"
               >
-                Nästa
+                Next
               </button>
             </div>
           </>
         ) : (
           !loading && (
-            <p className="search-page__empty">Inga resultat hittades.</p>
+            <p className="search-page__empty">We couldn’t find any matches.</p>
           )
         )}
       </div>
