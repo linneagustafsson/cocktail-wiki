@@ -1,0 +1,36 @@
+.cocktail-card {
+  background-color: var(--color-card);
+  border: 3px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  color: var(--color-text);
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 1rem auto;
+}
+
+.cocktail-card:hover {
+  transform: scale(1.03);
+}
+
+.cocktail-card__image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cocktail-card__title {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .cocktail-card {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,117 @@
+.navbar {
+  padding: 1rem;
+
+  background-image: url("/bg3.png");
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 500px;
+  width: 500px;
+  margin-right: 1rem;
+}
+h1 {
+  font-family: "Limelight", sans-serif;
+  font-size: 4rem;
+  color: rgb(247, 240, 182);
+}
+.link {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: rgb(247, 240, 182);
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-family: "Federo", sans-serif;
+  display: flex;
+}
+
+.link:hover {
+  color: rgb(143, 124, 63);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .link {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .logo-link {
+    text-decoration: none;
+  }
+
+  .logo-link h1 {
+    font-family: "Limelight", sans-serif;
+    font-size: 4rem;
+    color: rgb(247, 240, 182);
+    transition: color 0.3s ease;
+  }
+
+  .logo-link:hover h1 {
+    color: var(--color-accent); /* eller en annan snygg färg */
+  }
+
+  .logo {
+    width: 300px;
+    height: auto;
+  }
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: rgb(247, 240, 182);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .wrapper {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .wrapper.open {
+    display: flex;
+  }
+
+  .link {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}

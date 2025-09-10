@@ -1,0 +1,38 @@
+.martini-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  height: 100px;
+}
+
+.martini-glass {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid var(--color-accent);
+  position: relative;
+  animation: spin 1.5s linear infinite;
+}
+
+.martini-glass::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -5px;
+  width: 10px;
+  height: 30px;
+  background-color: var(--color-accent);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

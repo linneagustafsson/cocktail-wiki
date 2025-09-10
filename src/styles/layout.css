@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 100%;
+  display: flex;
+}
